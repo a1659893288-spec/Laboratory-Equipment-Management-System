@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShiyanshifenleiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShiyanshifenleiEntity" id="shiyanshifenleiMap">
+        <result property="shiyanshifenlei" column="shiyanshifenlei"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShiyanshifenleiVO" >
+		SELECT * FROM shiyanshifenlei  shiyanshifenlei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShiyanshifenleiVO" >
+		SELECT  shiyanshifenlei.* FROM shiyanshifenlei  shiyanshifenlei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShiyanshifenleiView" >
+
+		SELECT  shiyanshifenlei.* FROM shiyanshifenlei  shiyanshifenlei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShiyanshifenleiView" >
+		SELECT * FROM shiyanshifenlei  shiyanshifenlei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
